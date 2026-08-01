@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Missouri Backpacking Meetup</title>
+<style>
+:root{--bg:#101713;--card:#18231c;--soft:#243429;--text:#eef5ef;--muted:#b8c7bb;--accent:#d49b4b;--green:#7fa683}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(#0d1410,#17241b);color:var(--text);line-height:1.45}
+.hero{min-height:54vh;padding:34px 20px;display:flex;align-items:flex-end;background:
+linear-gradient(0deg,rgba(8,13,9,.92),rgba(8,13,9,.12)),
+url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Mina%20Sauk%20Falls%202011-01-01%20vpano.jpg') center/cover}
+.hero-inner,.wrap{max-width:900px;margin:auto;width:100%}
+.eyebrow{letter-spacing:.15em;text-transform:uppercase;color:#f2c17f;font-size:.78rem;font-weight:700}
+h1{font-size:clamp(2.2rem,8vw,4.6rem);line-height:.95;margin:.35rem 0 1rem}
+.hero p{max-width:640px;font-size:1.08rem}
+.wrap{padding:24px 16px 56px}
+.notice,.pick{border:1px solid #4d684f;background:#17271c;padding:16px;border-radius:16px;margin:0 0 20px}
+.grid{display:grid;gap:20px}
+.card{overflow:hidden;border-radius:20px;background:var(--card);border:1px solid #304435;box-shadow:0 10px 30px rgba(0,0,0,.22)}
+.card img{width:100%;height:240px;object-fit:cover;display:block;background:#26362b}
+.card-body{padding:20px}
+.tag{display:inline-block;background:#3b4e3e;color:#f8e0bd;padding:5px 9px;border-radius:999px;font-size:.76rem;font-weight:700;margin-bottom:8px}
+h2{margin:.2rem 0 .7rem;font-size:1.7rem}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:14px 0}
+.stat{background:var(--soft);padding:10px;border-radius:11px}
+.stat b{display:block;color:#f1be77;font-size:.77rem;text-transform:uppercase}
+.small{color:var(--muted);font-size:.92rem}
+.buttons{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+a.btn{display:inline-block;text-decoration:none;background:var(--accent);color:#16120b;padding:11px 14px;border-radius:10px;font-weight:700}
+a.btn.alt{background:#dfe9df}
+a.btn.dark{background:#33483a;color:white}
+.compare{width:100%;border-collapse:collapse;background:var(--card);overflow:hidden;border-radius:16px}
+.compare th,.compare td{padding:12px 9px;text-align:left;border-bottom:1px solid #344839;font-size:.9rem}
+.compare th{color:#f2bd72}
+footer{color:#9db09f;font-size:.82rem;margin-top:28px}
+@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}.card.feature{grid-column:1/-1}.card.feature{display:grid;grid-template-columns:1.05fr 1fr}.card.feature img{height:100%;min-height:400px}}
+
+@page{
+  size: Letter;
+  margin: 0.45in;
+}
+
+@media print{
+  :root{
+    --bg:#ffffff;
+    --card:#ffffff;
+    --soft:#f3f5f2;
+    --text:#111111;
+    --muted:#4f5a52;
+    --accent:#c4872f;
+    --green:#6d8b72;
+  }
+
+  html,body{
+    background:#ffffff !important;
+    color:#111111 !important;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  body{
+    font-size:10.5pt;
+    line-height:1.35;
+  }
+
+  .hero{
+    min-height:0;
+    height:3.35in;
+    padding:0.32in;
+    margin:0 0 0.18in;
+    border-radius:0;
+    page-break-after:avoid;
+    break-after:avoid;
+    background-position:center 42%;
+  }
+
+  .hero-inner{
+    margin:0;
+    align-self:flex-end;
+  }
+
+  .hero h1{
+    font-size:30pt;
+    margin:.08in 0 .08in;
+  }
+
+  .hero p{
+    font-size:11pt;
+    margin:0;
+    max-width:6.4in;
+  }
+
+  .wrap{
+    max-width:none;
+    width:100%;
+    padding:0;
+  }
+
+  .pick,.notice{
+    background:#f7f8f6 !important;
+    border:1px solid #b8c1b9;
+    color:#111;
+    padding:0.14in 0.16in;
+    margin:0 0 0.16in;
+    border-radius:8px;
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+
+  .grid{
+    display:block;
+  }
+
+  .card,
+  .card.feature{
+    display:grid !important;
+    grid-template-columns:2.35in 1fr;
+    gap:0;
+    margin:0 0 0.18in;
+    border:1px solid #aeb7af;
+    border-radius:10px;
+    box-shadow:none;
+    overflow:hidden;
+    background:#fff !important;
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+
+  .card img,
+  .card.feature img{
+    width:2.35in;
+    height:100%;
+    min-height:2.25in;
+    object-fit:cover;
+    display:block;
+  }
+
+  .card-body{
+    padding:0.16in 0.18in;
+  }
+
+  .tag{
+    background:#ece4d7 !important;
+    color:#5d3a0d !important;
+    padding:3px 7px;
+    font-size:7.5pt;
+    margin-bottom:3px;
+  }
+
+  h2{
+    font-size:15pt;
+    margin:0 0 .06in;
+  }
+
+  .card p{
+    margin:.04in 0;
+  }
+
+  .stats{
+    grid-template-columns:repeat(4,1fr);
+    gap:0.06in;
+    margin:0.08in 0;
+  }
+
+  .stat{
+    background:#f3f5f2 !important;
+    padding:0.07in;
+    border:1px solid #d5dbd5;
+    border-radius:6px;
+    font-size:8.4pt;
+  }
+
+  .stat b{
+    font-size:6.9pt;
+    color:#7a4b12 !important;
+  }
+
+  .small{
+    font-size:8.7pt;
+    color:#374038 !important;
+  }
+
+  .buttons{
+    display:none !important;
+  }
+
+  .compare{
+    margin-top:0.08in;
+    border:1px solid #aeb7af;
+    background:#fff !important;
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+
+  .compare th,
+  .compare td{
+    padding:0.08in;
+    font-size:8.6pt;
+    border-bottom:1px solid #d7ddd7;
+    color:#111 !important;
+  }
+
+  .compare th{
+    background:#eef1ed !important;
+    color:#6a4310 !important;
+  }
+
+  footer{
+    margin-top:0.16in;
+    color:#4c564f !important;
+    font-size:7.6pt;
+  }
+
+  a{
+    color:#111 !important;
+    text-decoration:none !important;
+  }
+
+  h2[style]{
+    margin-top:0.18in !important;
+    font-size:14pt !important;
+  }
+}
+
+
+.wheel-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,340px);gap:24px;align-items:center;margin:0 0 24px;padding:22px;border:1px solid #405845;border-radius:20px;background:#17231b}
+.wheel-result{margin:14px 0;padding:12px;border-radius:11px;background:#243429;color:#f0d0a1;font-weight:700}
+#spin-wheel{border:0;border-radius:12px;padding:12px 18px;background:#d49b4b;color:#17120a;font-size:1rem;font-weight:800;cursor:pointer}
+#spin-wheel:disabled{opacity:.65}
+.wheel-wrap{position:relative;width:min(78vw,320px);aspect-ratio:1;margin:auto}
+.trail-wheel{position:absolute;inset:0;border-radius:50%;border:10px solid #eef2ed;background:conic-gradient(#cf8b3e 0 120deg,#6f9276 120deg 240deg,#486856 240deg 360deg);transition:transform 4.5s cubic-bezier(.12,.7,.16,1)}
+.wheel-pointer{position:absolute;z-index:3;left:50%;top:-8px;transform:translateX(-50%);border-left:16px solid transparent;border-right:16px solid transparent;border-top:30px solid #f5ede1}
+.wheel-label{position:absolute;width:104px;text-align:center;color:white;font-size:.82rem;font-weight:800;text-shadow:0 1px 2px #000}
+.label-one{top:23%;right:7%;transform:rotate(58deg)}
+.label-two{bottom:17%;left:50%;transform:translateX(-50%) rotate(180deg)}
+.label-three{top:25%;left:2%;transform:rotate(-58deg)}
+.dog-note{margin:10px 0;padding:10px;border-left:4px solid #7fa683;background:#213026;border-radius:8px}
+.dog-yes{font-weight:800;color:#d6eccf}
+@media(max-width:680px){.wheel-section{grid-template-columns:1fr}}
+@media print{
+ .wheel-section{grid-template-columns:1fr 1.9in;gap:.15in;padding:.15in;background:#f7f8f6!important;border:1px solid #aeb7af;break-inside:avoid;page-break-inside:avoid}
+ .wheel-wrap{width:1.7in}.trail-wheel{border-width:5px}.wheel-pointer{top:-4px;border-left-width:9px;border-right-width:9px;border-top-width:17px;border-top-color:#444}
+ .wheel-label{font-size:6pt;width:.63in}.label-one{right:3%}.label-three{left:0}
+ #spin-wheel{display:none}.wheel-result{background:#eef1ed!important;color:#333!important;font-size:8pt;padding:.07in}
+ .dog-note{background:#f3f5f2!important;border-left:3px solid #758a79;padding:.07in;font-size:8.4pt}
+ .dog-yes{color:#29462e!important}
+}
+
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">October 2026 · Missouri</div>
+    <h1>Backpacking Meetup</h1>
+    <p>Three overnight backpacking options where you carry your full gear, camp on trail and hike out the next day.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  
+<section class="wheel-section">
+  <div>
+    <div class="eyebrow">Can’t decide?</div>
+    <h2>Spin for the trail</h2>
+    <p>Every option below is an overnight backpacking route where you carry your gear and camp out.</p>
+    <div id="wheel-result" class="wheel-result" aria-live="polite">Tap spin. Each trail has an equal one-in-three chance every time, so repeats are possible.</div>
+    <button id="spin-wheel" type="button">Spin the wheel</button>
+  </div>
+  <div class="wheel-wrap">
+    <div class="wheel-pointer"></div>
+    <div id="trail-wheel" class="trail-wheel" role="img" aria-label="Random trail picker">
+      <span class="wheel-label label-one">Taum Sauk</span>
+      <span class="wheel-label label-two">Bell Mountain</span>
+      <span class="wheel-label label-three">Goggins</span>
+    </div>
+  </div>
+</section>
+
+<section class="pick">
+    <strong>Best overall overnight:</strong> Taum Sauk to Johnson’s Shut-Ins as a shuttle hike. It offers the strongest scenery, but it is rugged and requires two vehicles or a planned shuttle.
+  </section>
+
+  <section class="grid">
+    <article class="card feature">
+      <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ozark%20Trail%20-%20Goggins%20Mtn%2020130511%201.jpg" alt="Ozark Trail in the Taum Sauk region">
+      <div class="card-body">
+        <span class="tag">BEST SCENERY</span>
+        <h2>Taum Sauk → Johnson’s Shut-Ins</h2>
+        <p>Use a selected portion of the Taum Sauk section for a two-day point-to-point. Expect rocky footing, steep changes and limited trail marking in places.</p>
+        <div class="stats">
+          <div class="stat"><b>Suggested mileage</b>16–20 miles</div>
+          <div class="stat"><b>Full section</b>About 35 miles</div>
+          <div class="stat"><b>Format</b>Point-to-point</div>
+          <div class="stat"><b>Difficulty</b>Hard</div>
+        </div>
+        <p class="small"><strong>Highlights:</strong> Mina Sauk Falls, Missouri high point, Devil’s Tollgate, rhyolite ridges and fall color.</p>
+        <p class="small"><strong>Water:</strong> Seasonal creeks; carry enough to bridge dry stretches and filter all natural water.</p><div class="dog-note"><span class="dog-yes">🐕 Dogs allowed:</span> Yes. In Missouri state parks, keep dogs supervised on a leash no longer than 10 ft. Dogs cannot use the trail into the main Johnson’s Shut-Ins swimming area.</div>
+        <div class="print-links" style="display:none"></div><div class="buttons">
+          <a class="btn" href="https://www.alltrails.com/search?query=Taum%20Sauk%20Ozark%20Trail" target="_blank">AllTrails</a>
+          <a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Taum+Sauk+Mountain+State+Park" target="_blank">Start Map</a>
+          <a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Johnsons+Shut-Ins+State+Park" target="_blank">Finish Map</a>
+          <a class="btn dark" href="https://www.google.com/search?tbm=isch&q=Taum+Sauk+Ozark+Trail+October" target="_blank">More Photos</a>
+        </div>
+        <div class="print-only-links"></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mina%20Sauk%20Falls%202011-01-01%20vpano.jpg" alt="Mina Sauk Falls">
+      <div class="card-body">
+        <span class="tag">BEST SIMPLE LOOP</span>
+        <h2>Bell Mountain Loop</h2>
+        <p>The cleanest two-day option because it starts and ends at the same trailhead. Rugged enough to feel worthwhile without arranging a shuttle.</p>
+        <div class="stats">
+          <div class="stat"><b>Mileage</b>11.9 miles</div>
+          <div class="stat"><b>Format</b>Loop</div>
+          <div class="stat"><b>Difficulty</b>Moderate</div>
+          <div class="stat"><b>Best season</b>Fall</div>
+        </div>
+        <p class="small"><strong>Tradeoff:</strong> Shorter than your usual 8–10 miles per day. You can slow down, explore, photograph and camp near the ridge.</p><div class="dog-note"><span class="dog-yes">🐕 Dogs allowed:</span> Yes. The Forest Service says dogs are allowed on hiking trails and should be under control; leashing is encouraged. Pack out waste or bury it at least 100 ft from trails and water.</div>
+        <div class="print-links" style="display:none"></div><div class="buttons">
+          <a class="btn" href="https://www.alltrails.com/trail/us/missouri/bell-mountain-loop-trail" target="_blank">AllTrails</a>
+          <a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Bell+Mountain+Wilderness+Trailhead+Missouri" target="_blank">Google Maps</a>
+          <a class="btn dark" href="https://www.google.com/search?tbm=isch&q=Bell+Mountain+Wilderness+Missouri+fall" target="_blank">Photos</a>
+        </div>
+        <div class="print-only-links"></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Johnsons%20Shut-ins%2020090815%201.jpg" alt="Johnson's Shut-Ins State Park">
+      <div class="card-body">
+        <span class="tag">BEST BASECAMP</span>
+        <h2>Johnson’s Shut-Ins / Goggins Mountain</h2>
+        <p>Best when you want a state-park campground and a roughly 11-mile backcountry loop without moving vehicles.</p>
+        <div class="stats">
+          <div class="stat"><b>Mileage</b>About 10.9 miles</div>
+          <div class="stat"><b>Format</b>Loop</div>
+          <div class="stat"><b>Difficulty</b>Moderate</div>
+          <div class="stat"><b>Bonus</b>Shut-ins visit</div>
+        </div>
+        <p class="small"><strong>Tradeoff:</strong> Less dramatic than the strongest Taum Sauk segment, but easier logistically and better for a relaxed meetup.</p><div class="dog-note"><span class="dog-yes">🐕 Dogs allowed:</span> Yes, on the backcountry trail. Keep dogs supervised on a leash no longer than 10 ft. Pets are prohibited on the separate trail leading into the shut-ins swimming area.</div>
+        <div class="print-links" style="display:none"></div><div class="buttons">
+          <a class="btn" href="https://www.alltrails.com/search?query=Goggins%20Mountain%20Johnson%27s%20Shut-Ins" target="_blank">AllTrails</a>
+          <a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Johnsons+Shut-Ins+State+Park" target="_blank">Google Maps</a>
+          <a class="btn dark" href="https://www.google.com/search?tbm=isch&q=Johnsons+Shut-Ins+State+Park+October" target="_blank">Photos</a>
+        </div>
+        <div class="print-only-links"></div>
+      </div>
+    </article>
+  </section>
+
+  <h2 style="margin-top:30px">Quick comparison</h2>
+  <table class="compare">
+    <tr><th>Route</th><th>Miles</th><th>Logistics</th><th>Pick it for</th></tr>
+    <tr><td>Taum Sauk → Shut-Ins</td><td>16–20 selected</td><td>Shuttle</td><td>Best scenery</td></tr>
+    <tr><td>Bell Mountain</td><td>11.9</td><td>One car</td><td>Best true loop</td></tr>
+    <tr><td>Goggins Mountain</td><td>~10.9</td><td>One car</td><td>Campground base</td></tr>
+  </table>
+
+  <section class="notice" style="margin-top:20px">
+    <strong>Current River warning:</strong> An Ozark Trail Association update reported tornado damage and a continuing closure from Midco Hollow south to Pike Creek Road. Confirm current status before considering that section.
+  </section>
+
+  <section class="notice">
+    <strong>October:</strong> Prepare for warm afternoons, cold nights, rain and dry seasonal water sources. Download offline maps before leaving; cell coverage can be weak.
+  </section>
+
+  <footer>
+    Verify closures, camping rules, water conditions and parking immediately before departure. Photos are loaded from Wikimedia Commons; linked galleries and third-party trail pages open externally.
+  </footer>
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.card').forEach(function(card){
+    const box = card.querySelector('.print-only-links');
+    const links = card.querySelectorAll('.buttons a');
+    if(!box || !links.length) return;
+    box.innerHTML = Array.from(links).map(function(a){
+      return '<div><strong>'+a.textContent+':</strong> '+a.href+'</div>';
+    }).join('');
+  });
+});
+</script>
+<style>
+.print-only-links{display:none}
+@media print{
+  .print-only-links{
+    display:block;
+    margin-top:.08in;
+    padding-top:.06in;
+    border-top:1px solid #d8ddd8;
+    font-size:7.2pt;
+    line-height:1.25;
+    color:#333;
+    overflow-wrap:anywhere;
+  }
+}
+</style>
+
+
+<script>
+(function(){
+  const wheel = document.getElementById('trail-wheel');
+  const button = document.getElementById('spin-wheel');
+  const result = document.getElementById('wheel-result');
+  if (!wheel || !button || !result) return;
+
+  const trails = [
+    {
+      name: "Taum Sauk → Johnson’s Shut-Ins",
+      note: "Best scenery · 16–20 selected miles · shuttle needed",
+      centerAngle: 60
+    },
+    {
+      name: "Bell Mountain Loop",
+      note: "Simplest logistics · 11.9 miles · one vehicle",
+      centerAngle: 180
+    },
+    {
+      name: "Goggins Mountain Loop",
+      note: "Relaxed campout · about 10.9 miles · one vehicle",
+      centerAngle: 300
+    }
+  ];
+
+  let rotation = 0;
+  let spinning = false;
+
+  function secureRandomIndex(max) {
+    const limit = Math.floor(0x100000000 / max) * max;
+    const values = new Uint32Array(1);
+    let value;
+
+    do {
+      crypto.getRandomValues(values);
+      value = values[0];
+    } while (value >= limit);
+
+    return value % max;
+  }
+
+  button.addEventListener('click', function(){
+    if (spinning) return;
+
+    spinning = true;
+    button.disabled = true;
+    result.textContent = "Spinning…";
+
+    const choice = secureRandomIndex(trails.length);
+    const picked = trails[choice];
+
+    const desiredRotation = (360 - picked.centerAngle) % 360;
+    const currentRotation = ((rotation % 360) + 360) % 360;
+
+    let delta = desiredRotation - currentRotation;
+    if (delta < 0) delta += 360;
+
+    const extraTurns = 4 + secureRandomIndex(4); // 4–7 full spins
+    rotation += (extraTurns * 360) + delta;
+    wheel.style.transform = `rotate(${rotation}deg)`;
+
+    window.setTimeout(function(){
+      result.innerHTML =
+        `<strong>${picked.name}</strong><br><span>${picked.note}</span>`;
+      button.disabled = false;
+      spinning = false;
+    }, 4650);
+  });
+})();
+</script>
+
+</body>
+</html>
